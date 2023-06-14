@@ -1,0 +1,173 @@
+* {
+    /*usado para remover as margens do navegador padrão*/
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* variação do texto*/
+:root{
+--text-color: white;
+--bg-url: url(./assets/bd.jpg);
+--stroke-color: silver;
+--surface-color: rgba(48, 43, 43, 0.438);
+--surface-color-hover:rgba(48, 43, 43, 0.800);
+--hightling-color: rgba(48, 43, 43, 0.800);
+--switch-bg-url: url(./assets/monn-stars.svg);
+}
+
+.light{
+    --text-color: black;
+    --bg-url: url(./assets/bd-light.jpg);
+    --stroke-color: black;
+    --surface-color: silver;
+    --surface-color-hover:rgba(48, 43, 43, 0.527);
+    --hightling-color: rgba(48, 43, 43, 0.527);
+    --switch-bg-url: url(./assets/sun.svg);
+}
+
+body{
+    /*
+    background-image: url(./assets/bd.jpg);
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+    */
+
+    background: var(--bg-url) no-repeat top center/cover;
+}
+
+body * {
+    font-family: 'Inter', sans-serif;
+    color: var(--text-color);
+}
+
+#container {
+    width: 360px;
+    /*height: 720px; não é nescessario a altura na paginas, pois ela se ajusta com os elementos adicionados*/
+    margin: 56px auto 0px; /* 56px será a autura, auto será lefth / right e 0px bottom*/
+    padding: 0 24px;
+}
+
+
+
+#profile{
+    text-align: center;
+    padding: 24px;
+}
+
+#profile img {
+    width: 112px;
+
+   /* display: block;
+    margin: auto; */
+    /* img é um elemento enline, não é possivel utilizar margem auto devemos usar o display:block */
+}
+
+#profile p {
+    font-weight: 500;
+    /*font-size: 16px; por padrão os navegadores já tem o tamanho de 16px*/
+    line-height: 24px;
+    margin-top: 8px;
+}
+
+/* switch*/
+
+#switch{
+    width: 64px;
+    position: relative; /* nescessario para que o switch button seja relativo a caixa switch*/
+    margin: 4px auto;
+}
+
+#switch button{
+    width: 32px;
+    height: 32px;
+    background: white var(--switch-bg-url) no-repeat center;
+    border: 0;
+    border-radius: 50%;
+    position: absolute; /*posicionamento sobreposto*/
+    left: 0;
+    z-index: 1; /* andar da camada*/
+
+    /*centralizar o elemento*/
+    transform: translateY(-50%);
+    top: 50%;
+}
+
+/* mudar o botão de lado*/
+.light #switch button{
+    right: 0;
+    left: initial;
+}
+
+#switch span{
+    display: block;
+    width: 64px;
+    height: 24px;
+    background: var(--surface-color);
+    border: 1px solid var(--stroke-color);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 9999px;
+}
+
+/*links*/
+
+ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 24px;
+}
+
+
+ul li a {
+    
+    display: flex; 
+    justify-content: center; /*centralizar o texto*/
+    align-items: center; /*alinhar o texto no meio da caixa*/
+    padding: 16px 24px;
+    background: var(--surface-color);
+    border: 1px solid var(--stroke-color);
+    border-radius: 8px; /* arendodamento de borda*/
+    -webkit-backdrop-filter: blur(4px); /*coloca um embaçamento*/
+
+    text-decoration: none; /*none-remove a linha de baixo do link/ anderline-adiciona a linha encima/ - overline - adiciona a linha embaixo*/
+    font-weight: 500; /* adicona o negrito do texto*/
+
+    transition: background 0.2s; /* tempo de mudança do fundo*/
+}
+
+/* pseudo-selector - quando passamos o mouse em cima do botão*/
+ul li a:hover {
+    background: var(--surface-color-hover);
+    border: 1.5px solid var(--text-color);
+}
+
+/* social links*/
+
+#sociallinks {
+    display: flex;
+    justify-content: center;
+    padding: 24px 0;
+    font-size: 24px;
+}
+
+#sociallinks a{   /*alinhamento dos items*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    transition: background 0.2s;
+    border-radius: 50%;
+}
+
+#sociallinks a:hover {
+    background: var(--hightling-color);
+}
+
+footer{
+    padding: 24px;
+    text-align: center;
+    font-size: 14px;
+}
