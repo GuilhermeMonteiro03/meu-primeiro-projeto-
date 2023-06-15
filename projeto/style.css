@@ -8,7 +8,7 @@
 /* variação do texto*/
 :root{
 --text-color: white;
---bg-url: url(./assets/bd.jpg);
+--bg-url: url(./assets/bg-mobile.jpg);
 --stroke-color: silver;
 --surface-color: rgba(48, 43, 43, 0.438);
 --surface-color-hover:rgba(48, 43, 43, 0.800);
@@ -18,7 +18,7 @@
 
 .light{
     --text-color: black;
-    --bg-url: url(./assets/bd-light.jpg);
+    --bg-url: url(./assets/bg-mobile-light.jpg);
     --stroke-color: black;
     --surface-color: silver;
     --surface-color-hover:rgba(48, 43, 43, 0.527);
