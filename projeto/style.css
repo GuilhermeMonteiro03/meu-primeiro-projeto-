@@ -94,12 +94,22 @@ body * {
     /*centralizar o elemento*/
     transform: translateY(-50%);
     top: 50%;
+
+    animation: slide-out 0.4s;
 }
 
 /* mudar o botão de lado*/
 .light #switch button{
-    right: 0;
-    left: initial;
+    /*right: 0;     sem animação
+    left: initial;*/
+
+    /*com animação*/
+    animation: slide-in 0.4s forwards;
+
+}
+
+#switch button:hover {
+    outline: 8px solid var(--hightling-color);
 }
 
 #switch span{
@@ -183,5 +193,22 @@ footer{
 
     .light{
         --bg-url: url(./assets/bg-desktop-light.jpg);
+    }
+}
+
+/* animação para o botão light mode */
+@keyframes slide-in {
+    from {
+        left:0;
+    } to {
+        left:50%;
+    }
+}
+
+@keyframes slide-out{
+    from{
+        left:50%;
+    } to{
+        left: 0;
     }
 }
